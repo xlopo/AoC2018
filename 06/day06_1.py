@@ -1,6 +1,10 @@
 from collections import namedtuple
 
-Coordinate = namedtuple('Coordinate', 'x y')
+
+class Coordinate(namedtuple('Coordinate', 'x y')):
+    def distance(self, other):
+        return abs(self.x - other.x) + abs(self.y - other.y)
+
 
 with open('input.txt') as f:
     data = f.readlines()
@@ -23,7 +27,7 @@ for y in range(min_y, max_y+1):
         nearest_distance = float('+inf')
         nearest_coords = []
         for coord in coordinates:
-            distance = abs(grid_coord.x - coord.x) + abs(grid_coord.y - coord.y)
+            distance = grid_coord.distance(coord)
             if distance == nearest_distance:
                 nearest_coords.append(coord)
             elif distance < nearest_distance:

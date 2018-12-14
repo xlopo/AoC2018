@@ -57,7 +57,7 @@ In this example, the areas of coordinates A, B, C, and F are infinite - while no
 
 What is the size of the largest area that isn't infinite?
 
-Your puzzle answer was 5333.
+Your puzzle answer was `5333`.
 
 The first half of this puzzle is complete! It provides one gold star: *
 
