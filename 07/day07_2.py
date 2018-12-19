@@ -19,7 +19,7 @@ for l in lines:
 
 
 num_elves = 5
-elves = [{'node': None, 'timer': 0}]
+elves = [{'node': None, 'timer': 0} for i in range(num_elves)]
 print(elves)
 
 unprocessed_nodes = set(nodes)
@@ -48,5 +48,6 @@ while set(node_order) != nodes:
         elf['node'] = node
         elf['timer'] = ord(node) - 64
         unprocessed_nodes.remove(node)
+    print(global_timer, elves)
 
 print(global_timer, ''.join(node_order))
